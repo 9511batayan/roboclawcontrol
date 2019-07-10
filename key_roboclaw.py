@@ -42,6 +42,4 @@ while True:
 		elif ord(c)==101: # e
 			rc.ForwardMixed(address,0)
 			rc.TurnRightMixed(address,0)
-#		elif ord(c)==27 and ord(c)==99:	# Esc and c
-#			signal.signal(signal.SIGINT,handler)
 

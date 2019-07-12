@@ -4,3 +4,4 @@ Roboclaw driverを使って、実機ロボットの制御をするための自�
 
 # Usage
 RoboClaw 2x15A Motor Controller
+Controll hardware : Raspberry pi2 model B+  

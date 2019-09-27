@@ -1,16 +1,19 @@
 # Roboclaw control
 # Overview
 roboclaw driverを使って、実移動ロボットの制御をするための自作プログラムリスト。
+ROSを使う人はここから複製
+https://github.com/sonyccd/roboclaw_ros
 
 # Usage
-RoboClaw 2x15A Motor Controller    
-Controll hardware : Raspberry pi2 model B+    
-programming laungage : Python2
+モータドライバ：RoboClaw 2x15A Motor Controller    
+ハードウェア : Raspberry pi2 model B+    
+使用言語 : Python2
 
 # 内容
-PWMのテストコード    
-Velocityのテストコード(予定)
+PWM制御
+キーボード操作スクリプト
+エンコーダから読み取りつつキーボードで操作可能なスクリプト
 
 # 注意
-roboclawがバージョンアップに伴いpython2だとエラーを吐いている。
-
+Velocity controlとPosition controlがシリアルエラーにより制御できないためPWM制御だけ。    
+今後、修正予定

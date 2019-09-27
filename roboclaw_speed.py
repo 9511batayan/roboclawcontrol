@@ -3,12 +3,9 @@
 #***The Min and Max Positions must be at least 0 and 50000
 
 import time
-from roboclaw import Roboclaw
+import roboclaw_driver.roboclaw_driver as rc
 
-#Windows comport name
-#rc = Roboclaw("COM3",115200)
-#Linux comport name
-rc = Roboclaw("/dev/ttyACM0",115200)
+rc.Open("/dev/ttyACM0",115200)
 
 def displayspeed():
 	enc1 = rc.ReadEncM1(address)
@@ -39,7 +36,6 @@ def displayspeed():
 	else:
 		print "failed "
 
-rc.Open()
 address = 0x80
 
 version = rc.ReadVersion(address)

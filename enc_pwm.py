@@ -1,3 +1,9 @@
+'''
+# @brief : This file is a program for PWM control while reading the encoder.
+# @author : koji kawabata
+# @date : 2019/9/27
+'''
+
 import time
 import signal
 import sys

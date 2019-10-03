@@ -103,7 +103,7 @@ class Cmd:
 def Open(comport, rate):
     global port
     try:
-	    port = serial.Serial(comport, baudrate=rate, timeout=0.1, interCharTimeout=0.01)
+	    port = serial.Serial(comport, baudrate=rate, timeout=1, interCharTimeout=0.01)
     except:
 	   return 0
     return 1

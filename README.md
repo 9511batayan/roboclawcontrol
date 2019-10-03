@@ -1,6 +1,6 @@
 # Roboclaw control
 # Overview
-roboclaw driverを使って、実移動ロボットの制御をするための自作プログラムリスト　　　　
+roboclaw driverを使って、実移動ロボットの制御をするための自作プログラムリスト    
 ROSを使う人はここから複製    
 https://github.com/sonyccd/roboclaw_ros
 

@@ -44,16 +44,22 @@ if version[0]==False:
 else:
 	print repr(version[1])
 
-while(1):
-	rc.SpeedM1(address,12000)
-	rc.SpeedM2(address,-12000)
-	for i in range(0,200):
-		displayspeed()
-		time.sleep(0.01)
+try:
+	while(1):
+		rc.SpeedM1(address,120)
+		rc.SpeedM2(address,-120)
+		for i in range(0,100):
+			displayspeed()
+			time.sleep(0.1)
 
-	rc.SpeedM1(address,-12000)
-	rc.SpeedM2(address,12000)
-	for i in range(0,200):
-		displayspeed()
-		time.sleep(0.01)
-  
+		rc.SpeedM1(address,-120)
+		rc.SpeedM2(address,120)
+		for i in range(0,100):
+			displayspeed()
+			time.sleep(0.1)
+except Exception as e:
+	print(e)
+finally:
+	rc.SpeedM1M2(address, 0, 0)
+	time.sleep(1)
+

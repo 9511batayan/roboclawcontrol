@@ -3,24 +3,25 @@
 # @author : koji kawabata
 # @date : 2019/9/27
 '''
-import sys,signal
+
+import time
+import signal
+import sys
 import roboclaw_driver.roboclaw_driver as rc
 
+'''
+# @brief : Function called by 
+'''
 def handler(signal,frame):
 	rc.ForwardMixed(address,0)
+	rc.TurnRightMixed(address,0)
+	print('Finish')
 	sys.exit(0)
 
 rc.Open('/dev/ttyACM0',115200)
 address = 0x80
-rc.ForwardMixed(address, 0)
-signal.signal(signal.SIGINT,handler)
 
-try:
-	# loop until ctl + c
-	while True:
-	'''
-	# write thread
-	'''
+print(rc.ReadVersion(address))
+print(rc.ReadM1VelocityPID(address))
+print(rc.ReadM2VelocityPID(address))
 
-except Exception as e:
-	print(e)

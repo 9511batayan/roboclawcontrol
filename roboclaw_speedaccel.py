@@ -38,7 +38,7 @@ def displayspeed():
 	else:
 		print "failed "
 
-rc.Open("/dev/ttyACM0",115200)
+rc.Open("/dev/ttyACM0", 115200)
 address = 0x80
 signal.signal(signal.SIGINT,handler)
 
@@ -47,16 +47,19 @@ if version[0]==False:
 	print "GETVERSION Failed"
 else:
 	print repr(version[1])
-qpps_m1 = 110; qpps_m2 = 110
+qpps_m1 = 50; qpps_m2 = 50; accel = 100
 try:
 	while(1):
-		rc.SpeedM1M2(address, qpps_m1, -qpps_m2)
-		for i in range (200):
+		rc.SpeedAccelM1(address,accel,qpps_m1)
+		rc.SpeedAccelM2(address,accel,-qpps_m2)
+		for i in range(0,200):
 			displayspeed()
 			time.sleep(0.01)
-		rc.SpeedM1M2(address, -qpps_m1, qpps_m2)
-		for i in range (200):
-			displayspeed():
+
+		rc.SpeedAccelM1(address,accel,-qpps_m1)
+		rc.SpeedAccelM2(address,accel,qpps_m2)
+		for i in range(0,200):
+			displayspeed()
 			time.sleep(0.01)
 except Exception as e:
 	print(e)

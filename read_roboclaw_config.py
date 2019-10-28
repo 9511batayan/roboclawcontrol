@@ -9,15 +9,6 @@ import signal
 import sys
 import roboclaw_driver.roboclaw_driver as rc
 
-'''
-# @brief : Function called by 
-'''
-def handler(signal,frame):
-	rc.ForwardMixed(address,0)
-	rc.TurnRightMixed(address,0)
-	print('Finish')
-	sys.exit(0)
-
 rc.Open('/dev/ttyACM0',115200)
 address = 0x80
 

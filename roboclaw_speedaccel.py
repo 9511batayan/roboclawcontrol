@@ -47,6 +47,7 @@ if version[0]==False:
 	print "GETVERSION Failed"
 else:
 	print repr(version[1])
+
 qpps_m1 = 50; qpps_m2 = 50; accel = 100
 try:
 	while(1):

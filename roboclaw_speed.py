@@ -6,7 +6,7 @@ import time,sys,signal
 import roboclaw_driver.roboclaw_driver as rc
 
 def handler(signal,frame):
-        rc.ForwardMixed(address,0)
+        rc.SpeedM1M2(address, 0, 0)
         sys.exit(0)
 
 def displayspeed():
@@ -47,6 +47,7 @@ if version[0]==False:
 	print "GETVERSION Failed"
 else:
 	print repr(version[1])
+
 qpps_m1 = 110; qpps_m2 = 110
 try:
 	while(1):
@@ -56,7 +57,9 @@ try:
 			time.sleep(0.01)
 		rc.SpeedM1M2(address, -qpps_m1, qpps_m2)
 		for i in range (200):
-			displayspeed():
+			displayspeed()
 			time.sleep(0.01)
 except Exception as e:
 	print(e)
+finally:
+	rc.SpeedM1M2(address, 0, 0)

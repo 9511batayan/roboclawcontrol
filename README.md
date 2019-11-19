@@ -1,9 +1,12 @@
 # Roboclaw control
 # Overview
 <<<<<<< HEAD
+<<<<<<< HEAD
 Roboclaw controllerを使って、実移動ロボットの制御をするための自作プログラムリスト　　　　
 ROSを使う人は以下のURLから複製して用いればオドメトリも算出可能    
 =======
+=======
+>>>>>>> master
 roboclaw driverを使って、実移動ロボットの制御をするための自作プログラムリスト    
 ROSを使う人はここから複製    
 >>>>>>> master
@@ -19,9 +22,12 @@ OS : Ubuntu mate 18.04 LTS
 PWM control    
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Velocity control    
 
 
 # License
+=======
+>>>>>>> master
 =======
 >>>>>>> master

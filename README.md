@@ -1,11 +1,6 @@
 # Roboclaw control
 # Overview
-<<<<<<< HEAD
-=======
-Roboclaw controllerを使って、実移動ロボットの制御をするための自作プログラムリスト　　　　
-ROSを使う人は以下のURLから複製して用いればオドメトリも算出可能    
->>>>>>> rc_dev
-roboclaw driverを使って、実移動ロボットの制御をするための自作プログラムリスト    
+Roboclaw controllerを使って、実移動ロボットの制御をするための自作プログラムリスト  
 ROSを使う人はここから複製    
 https://github.com/sonyccd/roboclaw_ros
 

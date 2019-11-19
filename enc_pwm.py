@@ -72,7 +72,7 @@ kb=KBHit()
 
 print('Hit any key(w,a,d,s,e), or Ctr+c to exit')
 version = rc.ReadVersion(address)
-if version[0]==False:
+if version[0] == False:
 	print "GETVERSION Failed"
 else:
 	print repr(version[1])

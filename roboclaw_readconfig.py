@@ -11,6 +11,8 @@ import roboclaw_driver.roboclaw_driver as rc
 
 rc.Open('/dev/ttyACM0',115200)
 address = 0x80
-rc.ForwardMixed(address, 0)
-rc.TurnRightMixed(address, 0)
+
+print(rc.ReadVersion(address))
+print(rc.ReadM1VelocityPID(address))
+print(rc.ReadM2VelocityPID(address))
 

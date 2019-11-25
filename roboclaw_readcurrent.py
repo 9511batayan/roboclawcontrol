@@ -11,17 +11,19 @@ def handler(signal,frame):
 	sys.exit(0)
 
 def displayCurrent():
-    current = rc.ReadCurrents(address)
-    print(current)
-    '''
-    l_currentA, r_currentA, crc = rc.ReadCurrents(address)
+    crc, l_currentA, r_currentA = rc.ReadCurrents(address)
     elapsed_time = time.time() - start
-    print(str(crc))
-    print("elapsed_time:{0}".format(elapsed_time)+"[sec] "+
-    "M1 moter current "+str(l_currentA)+"[A]")
-    print("elapsed_time:{0}".format(elapsed_time)+"[sec] "+
-    "M2 moter current "+str(r_currentA)+"[A]")
-    '''
+    l_currentA /= 100.0
+    r_currentA /= 100.0
+    if crc == 1:
+#	print("M1 moter current "+'{:.3}'.format(l_current)+"[A]")
+#	print("M2 moter current "+'{:.3}'.format(r_current)+"[A]") 
+    	print("elapsed_time:{0}".format(elapsed_time)+"[sec] "+
+    	"M1 moter current "+'{:.3}'.format(l_currentA)+"[A]")
+    	print("elapsed_time:{0}".format(elapsed_time)+"[sec] "+
+    	"M2 moter current "+'{:.3}'.format(r_currentA)+"[A]")
+    else:
+	print("Failed")
 
 rc.Open('/dev/ttyACM0',115200)
 signal.signal(signal.SIGINT,handler)
@@ -29,16 +31,15 @@ address = 0x80
 
 try:
 	# loop until ctl + c
-    m1_qpps = m2_qpps = 100
+    m1_qpps = m2_qpps = 200
     rc.SpeedM1M2(address, m1_qpps, m2_qpps)
     time.sleep(0.5)
     start = time.time()
-    displayCurrent()
-    '''
+    
     while True:
         displayCurrent()
         time.sleep(0.01)
-    '''
+    
 except Exception as e:
 	print(e)
 finally:
